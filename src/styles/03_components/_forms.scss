@@ -1,0 +1,130 @@
+@import "~bootstrap/scss/forms";
+
+$height: 36px;
+
+.form-inline {
+
+    & > div:first-child { 
+        max-width: 11.6rem;
+    }
+
+    .form-check {
+        width: 100%;
+    }
+        
+    &.has-danger {
+
+        .invalid-feedback {
+            visibility: visible;
+        }
+
+        input,
+        select {
+            background-color: #faefef;
+            border-color: $red;
+        }
+    }
+
+    &.is-right {
+        text-align: right;
+    }
+
+    &.has-info {
+        position: relative;
+
+        & .icon-wrapper {
+            position: absolute;
+            top: 1rem;
+            right: .5rem;
+            visibility: visible;
+            background-image: url($logo-info);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 1.375rem;
+            height: 1.375rem;
+            margin-left: .375rem;
+        }
+
+        input,
+        select {
+            width: calc(100% - 2.5rem);
+        }
+    }
+
+    &.is-required {
+        label::after {
+            font-weight: 800;
+            content: $mandatory-tab;
+            color: $green;
+            padding-left: .25rem;
+        }
+    }
+
+    .invalid-feedback {
+        visibility: hidden;
+        font-size: 1.125rem;
+        margin: .5em 0 0;
+        font-style: italic;
+        display: inline-block;
+    }
+
+    .is-invalid + .invalid-feedback {
+        visibility: visible;
+    }
+
+    @include media-breakpoint-up(xs) {
+        .form-control-label {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .form-control {
+            display: inline-block;
+            width: 100%; // Prevent labels from stacking above inputs in `.form-group`
+            vertical-align: middle;
+        }
+
+        .form-control-label {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .form-control-label {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        label {
+            align-self: flex-start;
+        }
+
+        .form-control-label {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+
+    @for $i from 1 through 10 {
+        .size-#{$i} { 
+            width: 35px + 6px * $i;
+            height: $height;
+            text-align: center;
+            padding: 5px 10px;
+            margin-right: 0.5rem;
+
+            &::placeholder {
+                opacity: 0.5;
+            }
+        }
+    }
+}
