@@ -1,0 +1,50 @@
+
+
+.view-header {
+	@include make-container;
+	
+	background-color: $blue-nav;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+
+	h1 {
+		@extend .display-1;
+		@extend .px-0;
+
+		color: $white;
+	}
+
+	.btn-header {
+		@extend .p-0;
+		
+		text-align: right
+	}
+
+	.tabs {
+		a {
+			font-size: 1.4rem;
+			color: $white;
+			font-weight: 600;
+			padding: 1.8rem 1.2rem 1.2rem 1.2rem;
+		}
+	}
+}
+
+.view-header-tabs {
+	background-color: $blue-dark;
+
+	h1 {
+		@extend .display-2;
+
+		color: $white;
+	}
+
+	.tabs {
+		a {
+			font-size: 1.4rem;
+			color: $white;
+			font-weight: 600;
+			padding: 1.8rem 1.2rem 1.2rem 1.2rem;
+		}
+	}
+}
